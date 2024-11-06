@@ -2,11 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Dish = require('./Dish'); // Ensure the path to Dish.js is correct
 
-// Connect to MongoDB
+// Connect to MongoDB (Cloud-based MongoDB Atlas connection)
 const connectDB = async () => {
   try {
-    await mongoose.connect('mongodb://127.0.0.1:27017/restaurant170', {
-      serverSelectionTimeoutMS: 5000 // Optional: timeout for server selection
+    // Replace with your MongoDB Atlas connection string
+    await mongoose.connect('mongodb+srv://chaturya3112:pHIrK4XS9ojR8Tob@Cluster0.mongodb.net/myDatabase?retryWrites=true&w=majority', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     });
     console.log('MongoDB connected');
 
